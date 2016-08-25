@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-HOME<p/>
-<a href = "board/boardlist.jsp">게시판</a>
-<a href = "member/register.jsp">회원가입</a>
+<%session.removeAttribute("adminOk"); %>
+로그아웃 성공<br><br>
 </body>
 </html>
