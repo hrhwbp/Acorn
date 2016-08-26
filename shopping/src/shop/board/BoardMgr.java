@@ -9,6 +9,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
+import shop.member.MemberBean;
+
 public class BoardMgr {
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -398,6 +401,8 @@ public class BoardMgr {
 			}
 		}
 	}
+	
+	
 }
 
 

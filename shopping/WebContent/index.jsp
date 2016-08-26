@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-HOME<p/>
+쇼핑몰 가기<p/>
+<a href = "guest/guest_index.jsp">일반사용자</a>
 <a href = "board/boardlist.jsp">게시판</a>
 <a href = "member/register.jsp">회원가입</a>
 </body>

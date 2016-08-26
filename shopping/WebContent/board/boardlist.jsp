@@ -15,9 +15,7 @@ int pageSu = 1;
 <meta charset="UTF-8">
 <title>게시판</title>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-<!--  <link rel = "stylesheet" type="text/css" href = "../css/board.css">-->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<link rel = "stylesheet" type="text/css" href = "../css/board.css">
 <script type="text/javascript">
 window.onload = function(){	
 	document.getElementById("btnSearch").onclick = function(){
@@ -33,7 +31,7 @@ window.onload = function(){
 </script>
 <body class="container row">
 
-      <div class="col s12">[<a href="../index.jsp">메인으로</a>]&nbsp;
+      <div class="col s12">[<a href="../guest/guest_index.jsp">메인으로</a>]&nbsp;
 			[<a href="boardlist.jsp">최신목록</a>]&nbsp;
 			[<a href="boardwrite.jsp">새글작성</a>]&nbsp;
 			[<a href="#" onclick = "window.open('admin.jsp','','width=300, height =150, top=200, left=300')">관리자</a>]
@@ -124,7 +122,7 @@ window.onload = function(){
 			</select>
 		
 			
-			<input type="text" name = "sword" style="height : 13px" class="col s6 offset-s6">
+			<input type="text" name = "sword" style="height : 13px">
 			<input type="button" value ="검색" id = "btnSearch" >
 			</form>
 			</td>
