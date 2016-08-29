@@ -5,7 +5,7 @@
 <jsp:setProperty property="*" name="memberBean"/>
 <jsp:useBean id="memberMgr" class = "shop.member.MemberMgr"/>
 <% 
-String id = (String)session.getAttribute("idKey");
+String id = request.getParameter("id");
 boolean b = memberMgr.memberUpdate(memberBean, id); 
 %>
 
@@ -13,8 +13,8 @@ boolean b = memberMgr.memberUpdate(memberBean, id);
 if(b){
 %>
 	<script>
-	alert("회원정보가 수정되었습니다!");
-	location.href= "../guest/guest_index.jsp";
+	alert("(관리자)회원정보가 수정되었습니다!");
+	location.href= "membermanager.jsp";
 	</script>
 <%}else{%>
 	<script>alert("회원정보 수정 실패! 관리자에게 문의해주세요");
