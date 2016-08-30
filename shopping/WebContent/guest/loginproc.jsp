@@ -5,7 +5,7 @@
 <%
 String id = request.getParameter("id");
 String passwd = request.getParameter("passwd");
-System.out.println("id" + id + "passwd" + passwd);
+//System.out.println("id" + id + "passwd" + passwd);
 
 boolean b = memberMgr.loginCheck(id, passwd);
 

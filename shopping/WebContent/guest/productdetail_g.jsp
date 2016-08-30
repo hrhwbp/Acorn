@@ -11,14 +11,15 @@ ProductBean bean = productMgr.getProduct(no);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>**상세보기**</title>
+<title>**상품 상세보기**</title>
 <link href = "../css/style.css" rel = "stylesheet" type = "text/css">
 <script type="text/javascript" src = "../js/script.js"></script>
 </head>
 <body>
 *** 상품 상세보기 *** <br>
-<%@ include file="admin_top.jsp" %>
-<table style="width:100%">
+<%@ include file="guest_top.jsp" %>
+<form action="cartproc.jsp">
+<table style="width:70%">
 	<tr>
 		<td style="width: 20%">			
 			<img src="../data/<%=bean.getImage()%>" width = "150">
@@ -29,7 +30,8 @@ ProductBean bean = productMgr.getProduct(no);
 				<tr><td>품명 : </td><td><%=bean.getName() %></td></tr>
 				<tr><td>가격 : </td><td><%=bean.getPrice() %></td></tr>
 				<tr><td>등록일 : </td><td><%=bean.getSdate() %></td></tr>
-				<tr><td>재고량 : </td><td><%=bean.getStock() %></td></tr>							
+				<tr><td>재고량 : </td><td><%=bean.getStock() %></td></tr>
+				<tr><td>주문수 : </td><td><input type = "text" name = "quantity" value = "1" size = "5" style="text-align: center;"></td></tr>					
 			</table>
 		</td>
 		<td style="vertical-align: top;">
@@ -39,15 +41,16 @@ ProductBean bean = productMgr.getProduct(no);
 	</tr>
 	<tr>
 		<td colspan="3" style="text-align: center;">
-			<a href = "javascript:productUpdate('<%=bean.getNo() %>')"> 수정하기</a>
-			<a href = "javascript:productDelete('<%=bean.getNo() %>')"> 삭제하기</a>
+			<br>
+			<input type="hidden" name = "product_no" value = "<%= bean.getNo()%>">
+			<input type="submit" value = "장바구니에 담기">
+			<input type="button" value = "이전으로" onclick="history.back()">
+			
 		</td>
 	</tr>
 </table>
+</form>
+<%@ include file="guest_bottom.jsp" %>
 
-<%@include file="admin_bottom.jsp"%>
-
-<form action="productupdate.jsp" name = "updateFrm" method = "post"><input type="hidden" name ="no"></form>
-<form action="productproc.jsp?flag=delete" name = "deleteFrm" method = "post"><input type="hidden" name ="no"></form>
 </body>
 </html>

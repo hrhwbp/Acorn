@@ -76,14 +76,39 @@ function productUpdate(no){
 }
 
 function productDelete(no){
-	document.deleteFrm.no.value = no;
-	document.deleteFrm.submit();
+	if(confirm("정말 삭제할까요?")){
+		document.deleteFrm.no.value = no;
+		document.deleteFrm.submit();		
+	}
+}
+	
+//장바구니에서의 처리
+
+function cartUpdate(form){
+	form.flag.value = "update";
+	form.submit();
 }
 
+function cartDelete(form){
+	form.flag.value = "del";
+	form.submit();
+}
 
+function orderDetail(no){
+	document.detailFrm.no.value = no;
+	document.detailFrm.submit();	
+}
 
+// 관리자에서 주문 처리 시 
+function orderUpdate(form){
+	document.detailFrm.flag.value = "update";
+	form.submit();
+}
 
-
+function orderDelete(form){
+	document.detailFrm.flag.value = "delete";
+	form.submit();
+}
 
 
 
